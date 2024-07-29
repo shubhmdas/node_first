@@ -1,0 +1,9 @@
+{
+    "terminal.explorerKind": "external",
+    "terminal.integrated.automationProfile.linux": {
+
+    },
+    "terminal.integrated.defaultProfile.linux": "bash",
+    "prettier.tabWidth": 4,
+    "prettier.useTabs": true
+}
