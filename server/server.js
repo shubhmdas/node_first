@@ -1,6 +1,7 @@
-const express = require('express');
-const mongoose = require('mongoose');
-require('dotenv').config(); // To lead environment variables from .env file
+import express from 'express';
+import mongoose from 'mongoose';
+
+import 'dotenv/config'; // To lead environment variables from .env file
 
 // Initialize Express app
 const app = express();
@@ -16,13 +17,14 @@ mongoose
 		console.log('Connected to database!');
 	})
 	.catch((e) => {
-		console.log('Could not connect to database!');
-		console.log('Error: ', e);
+		console.log('Could not connect to database!', e);
 	});
 
 // Routes
-const productRoutes = require('./routes/products');
-app.use('/api', productRoutes);
+import movieRoutes from './routes/movieRoute.js';
+import commentRoutes from './routes/commentRoute.js';
+app.use('/api/movies', movieRoutes);
+app.use('/api/comments', commentRoutes);
 
 // Start the server
 const PORT = process.env.PORT || 5000;
