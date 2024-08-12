@@ -15,7 +15,7 @@ export const getTrendingMovies = async (req, res) => {
 
 export const getMovieById = async (req, res) => {
 	try {
-		const movie = await Movie.findById((id = req.params.id)); // Fetch movies by ID
+		const movie = await Movie.findById(req.params.id).select('title'); // Fetch movies by ID
 		if (!movie) {
 			return res.status(404).json({ error: 'Movie not found!' });
 		}
